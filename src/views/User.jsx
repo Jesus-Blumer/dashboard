@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
-import {Dashboard}  from '../api'
+import { GetUsers, GetGender } from "../api";
 import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import {
-  dataPie,
   legendPie,
   dataSales,
   optionsSales,
@@ -18,11 +17,24 @@ import {
 } from "variables/Variables.jsx";
 
 class User extends Component {
+  state = {
+    totalUsers: " ",
+    male: "",
+    female: "",
+    others: ""
+  };
 
-componentDidMount(){
-  Dashboard()
-}
+  async componentDidMount() {
+    const users = await GetUsers();
+    const gender = await GetGender();
 
+    this.setState({
+      totalUsers: users,
+      male: gender.male,
+      female: gender.female,
+      others: gender.others
+    });
+  }
 
   createLegend(json) {
     var legend = [];
@@ -35,6 +47,19 @@ componentDidMount(){
     return legend;
   }
   render() {
+    const { totalUsers, male, female, others } = this.state;
+
+    var dataPie = {
+      labels: [male+'%', female+'%', others+'%'],
+      series: [male, female, others]
+    };
+    console.log('datapie:', dataPie)
+
+
+    var legendPie = {
+      names: ["Hombres", "Mujeres", "Otros"],
+      types: ["info", "danger", "warning"]
+    };
     return (
       <div className="content">
         <Grid fluid>
@@ -43,12 +68,12 @@ componentDidMount(){
               <StatsCard
                 bigIcon={<i className="pe-7s-server text-warning" />}
                 statsText="Total de Usuarios"
-                statsValue="12694"
+                statsValue={totalUsers}
                 statsIcon={<i className="fa fa-refresh" />}
                 statsIconText="Updated now"
               />
             </Col>
-             {/*
+            {/*
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="fa fa-twitter text-info" />}
@@ -58,7 +83,7 @@ componentDidMount(){
                 statsIconText="Updated now"
               />
             </Col>
-              */} 
+              */}
           </Row>
           <Row>
             <Col md={8}>

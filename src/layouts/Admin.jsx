@@ -48,7 +48,7 @@ class Admin extends Component {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "user";
   };
 
   handleColorClick = color => {
@@ -97,8 +97,6 @@ class Admin extends Component {
             handleColorClick={this.handleColorClick}
             handleHasImage={this.handleHasImage}
             bgColor={this.state["color"]}
-            bgImage={this.state["image"]}
-            mini={this.state["mini"]}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}
           />

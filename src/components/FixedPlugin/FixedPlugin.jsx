@@ -48,13 +48,13 @@ class FixedPlugin extends Component {
                   />
                   <span
                     className={
-                      this.props.bgColor === "#584b42"
+                      this.props.bgColor === "green"
                         ? "badge filter badge-green active"
                         : "badge filter badge-green"
                     }
-                    data-color="#584b42"
+                    data-color="green"
                     onClick={() => {
-                      this.props.handleColorClick("#584b42");
+                      this.props.handleColorClick("green");
                     }}
                   />
                   <span

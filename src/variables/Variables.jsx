@@ -408,15 +408,6 @@ const iconsArray = [
 // // // // For dashboard's charts
 // //
 //
-// Data for Pie Chart
-var dataPie = {
-  labels: ["50%", "40%", "10%"],
-  series: [50, 40, 10]
-};
-var legendPie = {
-  names: ["Hombres", "Mujeres", "Otros"],
-  types: ["info", "danger", "warning"]
-};
 
 // Data for Line Chart
 var dataSales = {

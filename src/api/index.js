@@ -1,17 +1,28 @@
-"use strict";
+'use strict'
+const host = "http://ec2-3-85-172-215.compute-1.amazonaws.com:8989";
 
-const host = "http://192.168.1.90:8989/api/v2";
-
-const Dashboard = async () => {
+async function GetUsers() {
   try {
-    const url = `${host}/dashboard/`;
+    const url = `${host}/api/v2/dashboard/`;
     const response = await fetch(url);
-    const data = await response.json();
-      console.log('DATAAAA', data)
-    return data;
+    const users = await response.json();
+    const { count } = users.profiles;
+    return count;
   } catch (error) {
-    return error
+    return error;
   }
-};
+}
 
-export {Dashboard}
+async function GetGender() {
+  try {
+    const url = `${host}/api/v2/dashboard/`;
+    const response = await fetch(url);
+    const genere = await response.json();
+    const { gender } = genere.profiles;
+    return gender;
+  } catch (error) {
+    return error;
+  }
+}
+
+export { GetUsers, GetGender };
