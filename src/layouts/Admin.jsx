@@ -13,7 +13,6 @@ class Admin extends Component {
     super(props);
     this.state = {
       color: "black",
-      hasImage: true,
       fixedClasses: "dropdown show-dropdown open"
     };
   }
@@ -54,9 +53,7 @@ class Admin extends Component {
   handleColorClick = color => {
     this.setState({ color: color });
   };
-  handleHasImage = hasImage => {
-    this.setState({ hasImage: hasImage });
-  };
+
   handleFixedClick = () => {
     if (this.state.fixedClasses === "dropdown") {
       this.setState({ fixedClasses: "dropdown show-dropdown open" });
@@ -95,7 +92,6 @@ class Admin extends Component {
           <FixedPlugin
             handleImageClick={this.handleImageClick}
             handleColorClick={this.handleColorClick}
-            handleHasImage={this.handleHasImage}
             bgColor={this.state["color"]}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}

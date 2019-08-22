@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 
-import logo from "assets/img/reactlogo.png";
+import logo from "assets/img/blumer.png";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -31,20 +31,14 @@ class Sidebar extends Component {
         id="sidebar"
         className="sidebar"
         data-color={this.props.color}
-        data-image={this.props.image}
       >
-          {this.props.hasImage ? (
-            <div className="sidebar-background" style={sidebarBackground} />
-          ) : (
-            null
-          )}
         <div className="logo">
           <a
             href="https://www.creative-tim.com?ref=lbd-sidebar"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
-              <img src={logo} alt="logo_image" />
+             {/*<img src={logo} alt="logo_image" style={styleLogo}/>*/}
             </div>
           </a>
           <a
@@ -86,5 +80,10 @@ class Sidebar extends Component {
     );
   }
 }
+
+const styleLogo = {
+  height: 20,
+  width: 60
+};
 
 export default Sidebar;

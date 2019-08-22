@@ -1,3 +1,25 @@
+/*!
+
+=========================================================
+* Light Bootstrap Dashboard React - v1.3.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+//
+// //
+// // // For notifications
+// //
+//
 var defaultWidth =
   window.screen.width > 768
     ? (window.screen.width * 1) / 3
@@ -66,6 +88,67 @@ var style = {
       margin: "0 auto",
       left: "50%",
       marginLeft: -(defaultWidth / 2)
+    }
+  },
+
+  NotificationItem: {
+    DefaultStyle: {
+      position: "relative",
+      width: "100%",
+      cursor: "pointer",
+      borderRadius: "4px",
+      fontSize: "14px",
+      margin: "10px 0 0",
+      padding: "10px",
+      display: "block",
+      WebkitBoxSizing: "border-box",
+      MozBoxSizing: "border-box",
+      boxSizing: "border-box",
+      opacity: 0,
+      transition: "all 0.5s ease-in-out",
+      WebkitTransform: "translate3d(0, 0, 0)",
+      transform: "translate3d(0, 0, 0)",
+      willChange: "transform, opacity",
+
+      isHidden: {
+        opacity: 0
+      },
+
+      isVisible: {
+        opacity: 1
+      }
+    },
+
+    success: {
+      borderTop: 0,
+      backgroundColor: "#a1e82c",
+      WebkitBoxShadow: 0,
+      MozBoxShadow: 0,
+      boxShadow: 0
+    },
+
+    error: {
+      borderTop: 0,
+      backgroundColor: "#fc727a",
+      WebkitBoxShadow: 0,
+      MozBoxShadow: 0,
+      boxShadow: 0
+    },
+
+    warning: {
+      borderTop: 0,
+      backgroundColor: "#ffbc67",
+      WebkitBoxShadow: 0,
+      MozBoxShadow: 0,
+      boxShadow: 0
+    },
+
+    info: {
+      borderTop: 0,
+      backgroundColor: "#63d8f1",
+      WebkitBoxShadow: 0,
+      MozBoxShadow: 0,
+      boxShadow: 0
     }
   },
 
@@ -261,7 +344,7 @@ const iconsArray = [
   "pe-7s-volume1",
   "pe-7s-voicemail",
   "pe-7s-video",
-  "pe-7s-users",
+  "pe-7s-user",
   "pe-7s-upload",
   "pe-7s-unlock",
   "pe-7s-umbrella",
@@ -408,6 +491,15 @@ const iconsArray = [
 // // // // For dashboard's charts
 // //
 //
+// Data for Pie Chart
+var dataPie = {
+  labels: ["40%", "20%", "40%"],
+  series: [40, 20, 40]
+};
+var legendPie = {
+  names: ["Open", "Bounce", "Unsubscribe"],
+  types: ["info", "danger", "warning"]
+};
 
 // Data for Line Chart
 var dataSales = {

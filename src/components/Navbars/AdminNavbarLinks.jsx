@@ -8,12 +8,12 @@ class AdminNavbarLinks extends Component {
         <Nav>
           <NavItem eventKey={1} href="#">
             <i className="fa fa-dashboard" />
-            <p className="hidden-lg hidden-md">Blumer</p>
           </NavItem>
         </Nav>
         <Nav pullRight>
           <NavItem eventKey={1} href="#">
-            Blumer
+            <span style={navbarColor}>Blumer</span>
+             {/*<img src={logo} alt="logo_image" style={styleLogo}/>*/}
           </NavItem>
         </Nav>
       </div>
@@ -21,4 +21,7 @@ class AdminNavbarLinks extends Component {
   }
 }
 
+const navbarColor = {
+ color: 'white',
+};
 export default AdminNavbarLinks;

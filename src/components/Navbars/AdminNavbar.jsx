@@ -29,7 +29,7 @@ class Header extends Component {
   }
   render() {
     return (
-      <Navbar fluid>
+      <Navbar fluid style={navbarColor}>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#">{this.props.brandText}</a>
@@ -43,5 +43,10 @@ class Header extends Component {
     );
   }
 }
+
+const navbarColor = {
+  backgroundColor: '#341677',
+};
+
 
 export default Header;
