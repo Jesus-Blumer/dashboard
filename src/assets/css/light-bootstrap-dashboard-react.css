@@ -348,11 +348,11 @@ body > .navbar-collapse:before {
 .sidebar:before,
 body > .navbar-collapse:before {
   opacity: .33;
-  background: #000000; }
+  background: #ffffff; }
 
 .sidebar:after,
 body > .navbar-collapse:after {
-  background: #282828;
+  background: #ffffff;
   background: -moz-linear-gradient(top, #282828 0%, #111 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #282828), color-stop(100%, #111));
   background: -webkit-linear-gradient(top, #282828 0%, #111 100%);

@@ -1,5 +1,5 @@
 'use strict'
-const host = "http://ec2-3-85-172-215.compute-1.amazonaws.com:8989";
+const host = process.env.REACT_APP_API_BLUMER
 
 async function GetUsers() {
   try {

@@ -1,25 +1,3 @@
-/*!
-
-=========================================================
-* Light Bootstrap Dashboard React - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-//
-// //
-// // // For notifications
-// //
-//
 var defaultWidth =
   window.screen.width > 768
     ? (window.screen.width * 1) / 3
@@ -261,11 +239,8 @@ var style = {
   }
 };
 
-//
-// //
 // // // For tables
-// //
-//
+
 const thArray = ["ID", "Name", "Salary", "Country", "City"];
 const tdArray = [
   ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
@@ -276,11 +251,8 @@ const tdArray = [
   ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
 ];
 
-//
-// //
 // // // For icons
-// //
-//
+
 const iconsArray = [
   "pe-7s-album",
   "pe-7s-arc",
@@ -511,12 +483,15 @@ var dataSales = {
     "9:00PM",
     "12:00PM",
     "3:00AM",
-    "6:00AM"
+    "6:00AM",
+    "3:00PM",
+    "4:00PM",
+    "11:00AM"
   ],
   series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
-    [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+    [287, 385, 490, 492, 554, 586, 698, 695, 345, 248, 453],
+    [67, 152, 143, 240, 287, 335, 435, 437, 393, 447, 239],
+    [23, 113, 67, 108, 190, 239, 307, 308, 325, 111, 212]
   ]
 };
 var optionsSales = {
@@ -548,7 +523,7 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
+  names: ["Hombres", "Mujeres", "Otros"],
   types: ["info", "danger", "warning"]
 };
 
@@ -570,7 +545,8 @@ var dataBar = {
   ],
   series: [
     [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-    [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
+    [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695],
+    [399, 220, 390, 600, 263, 323, 405, 390, 198, 520, 521, 423]
   ]
 };
 var optionsBar = {
@@ -594,8 +570,8 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
-  types: ["info", "danger"]
+  names: ["Hombres", "Mujeres", "Otros"],
+  types: ["info", "danger", "warning"]
 };
 
 module.exports = {

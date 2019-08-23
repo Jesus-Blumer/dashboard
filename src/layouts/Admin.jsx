@@ -81,7 +81,7 @@ class Admin extends Component {
       <div className="wrapper">
         <Sidebar {...this.props} routes={routes} image={this.state.image}
         color={this.state.color}
-        hasImage={this.state.hasImage}/>
+        />
         <div id="main-panel" className="main-panel" ref="mainPanel">
           <AdminNavbar
             {...this.props}

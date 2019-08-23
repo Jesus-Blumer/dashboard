@@ -23,20 +23,13 @@ class Sidebar extends Component {
     window.addEventListener("resize", this.updateDimensions.bind(this));
   }
   render() {
-    const sidebarBackground = {
-      backgroundImage: "url(" + this.props.image + ")"
-    };
     return (
       <div
         id="sidebar"
         className="sidebar"
-        data-color={this.props.color}
       >
         <div className="logo">
-          <a
-            href="https://www.creative-tim.com?ref=lbd-sidebar"
-            className="simple-text logo-mini"
-          >
+          <a className="simple-text logo-mini">
             <div className="logo-img">
              {/*<img src={logo} alt="logo_image" style={styleLogo}/>*/}
             </div>
@@ -67,8 +60,8 @@ class Sidebar extends Component {
                       className="nav-link"
                       activeClassName="active"
                     >
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
+                      <i className={prop.icon} style={styles.colorIcon} />
+                      <p style={styles.colorText}>{prop.name}</p>
                     </NavLink>
                   </li> 
                 );
@@ -81,9 +74,13 @@ class Sidebar extends Component {
   }
 }
 
-const styleLogo = {
-  height: 20,
-  width: 60
+const styles = {
+  colorIcon:{
+    color: '#dfd6f7'
+  },
+  colorText:{
+    color: 'white'
+  }
 };
 
 export default Sidebar;

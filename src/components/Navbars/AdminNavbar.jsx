@@ -45,7 +45,7 @@ class Header extends Component {
 }
 
 const navbarColor = {
-  backgroundColor: '#341677',
+  backgroundColor: '#ffffff',
 };
 
 

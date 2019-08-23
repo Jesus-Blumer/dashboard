@@ -5,15 +5,12 @@ import { GetUsers, GetGender } from "../api";
 import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import {
-  legendPie,
   dataSales,
   optionsSales,
   responsiveSales,
   legendSales,
-  dataBar,
-  optionsBar,
   responsiveBar,
-  legendBar
+  
 } from "variables/Variables.jsx";
 
 class User extends Component {
@@ -48,18 +45,62 @@ class User extends Component {
   }
   render() {
     const { totalUsers, male, female, others } = this.state;
-
+//------------------------------------------------------------
     var dataPie = {
       labels: [male+'%', female+'%', others+'%'],
       series: [male, female, others]
     };
-    console.log('datapie:', dataPie)
-
-
     var legendPie = {
       names: ["Hombres", "Mujeres", "Otros"],
       types: ["info", "danger", "warning"]
     };
+//-------------------------------------------------------------
+var dataBar = {
+  labels: [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic"
+  ],
+  series: [
+    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+    [312, 243, 280, 580, 353, 333, 300, 364, 368, 410, 636, 495],
+    [109, 56, 39, 69, 63, 113, 89, 39, 8, 20, 71, 23]
+  ]
+};
+var optionsBar = {
+  seriesBarDistance: 10,
+  axisX: {
+    showGrid: false
+  },
+  height: "245px"
+};
+var responsiveBar = [
+  [
+    "screen and (max-width: 640px)",
+    {
+      seriesBarDistance: 5,
+      axisX: {
+        labelInterpolationFnc: function(value) {
+          return value[0];
+        }
+      }
+    }
+  ]
+];
+var legendBar = {
+  names: ["Hombres", "Mujeres", "Otros"],
+  types: ["info", "danger", "warning"]
+};
+//------------------------------------------------------------------------
     return (
       <div className="content">
         <Grid fluid>
@@ -69,8 +110,6 @@ class User extends Component {
                 bigIcon={<i className="pe-7s-server text-warning" />}
                 statsText="Total de Usuarios"
                 statsValue={totalUsers}
-                statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Updated now"
               />
             </Col>
             {/*
@@ -133,8 +172,8 @@ class User extends Component {
             <Col md={6}>
               <Card
                 id="chartActivity"
-                title="2014 Sales"
-                category="All products including Taxes"
+                title="Año 2019"
+                category="Usuarios registrados por mes"
                 stats="Data information certified"
                 statsIcon="fa fa-check"
                 content={
